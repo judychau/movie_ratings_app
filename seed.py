@@ -56,15 +56,24 @@ def load_movies():
 
 
 
-# def load_ratings():
-#     """Load ratings from u.data into database."""
+def load_ratings():
+    """Load ratings from u.data into database."""
 
-#     text = open('seed_data/u.data')
-#     allratings = text.read().split()
+    text = open('seed_data/u.data')
+  
+    for line in text:
+        line.rstrip()
+        row = line.split()
+        user_id = row[0]
+        movie_id = row[1]
+        score = row[2]
 
-#     for row in allratings:
-#         row = row.rstrip()
-#         user_id, movie_id, score, timestamp
+        rating = Rating(user_id=user_id, movie_id=movie_id, score=score)
+
+        db.session.add(rating)
+
+    db.session.commit()
+
 
 
 
@@ -73,4 +82,4 @@ if __name__ == "__main__":
 
     load_users()
     load_movies()
-# #     load_ratings()
+    load_ratings()
