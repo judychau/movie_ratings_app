@@ -1,6 +1,6 @@
 # # """Utility file to seed ratings database from MovieLens data in seed_data/"""
 
-from model import User, Rating, Movie, connect_to_db, db
+from model import User, Rating, Movie, co nnect_to_db, db
 
 
 # # here we are importing information from our model.py file. we are importing the tables that we created. The tables are created by the classes USER, MOVIE, and RATING. We also import the connect_to_db function and the db funtion to import our connection and the actual database.

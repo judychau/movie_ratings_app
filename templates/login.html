@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Login</h1>
+
+<form action="/processlogin" method="post">
+    <label> Email: </label>
+        <input type="text" name="email" id="email"><br>
+
+    <label> Password: </label>
+        <input type="text" name="password" id="password"><br>
+
+        <input type="submit">
+</form>
+
+<br>
+<br>
+<br>
+
+<h3>Register</h3>
+    <p><a href="/register">Click here to register!</a></p>
+
+{% endblock %}
